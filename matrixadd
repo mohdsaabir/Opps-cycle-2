@@ -1,0 +1,83 @@
+mport java.util.*;
+import java.lang.*;
+
+class addition
+{
+        void getdata(int mat[][],int r,int c)
+        {
+                Scanner sc=new Scanner(System.in);
+                int i,j;
+                for(i=0;i<r;i++)
+                {
+                        for(j=0;j<c;j++)
+                        {
+                                System.out.println("Enter the element in "+"a["+i+"]"+"["+j+"]");
+                                mat[i][j]=sc.nextInt();
+                        }
+                }
+        }
+        void display(int mat[][],int r,int c)
+        {
+                int i,j;
+                for(i=0;i<r;i++)
+                { 
+                        for(j=0;j<c;j++)
+                        { 
+                                System.out.print("\t"+mat[i][j]);
+                        }
+                        System.out.print("\n");
+                }
+
+        }
+        void add(int mat1[][],int r1,int c1,int mat2[][],int r2,int c2)
+
+        {       
+                int i,j;
+                int result[][]=new int[r1][c1];
+                for(i=0;i<r1;i++)
+                { 
+                        for(j=0;j<c1;j++)
+                        { 
+                                result[i][j]=mat1[i][j]+mat2[i][j];
+                                System.out.print("\t"+result[i][j]);
+                        }
+                System.out.print("\n");
+                }
+        }
+
+}
+class matrixadd
+{
+        public static void main(String args[])
+        {
+                int r1,r2,c1,c2;
+                Scanner sc=new Scanner(System.in);
+                System.out.print("\nEnter the no.of rows of first matrix : \t");
+                r1=sc.nextInt();
+                System.out.print("\nEnter the no.of columns of first matrix : \t");
+                c1=sc.nextInt();
+                System.out.print("\nEnter the no.of rows of second  matrix : \t");
+                r2=sc.nextInt();
+                System.out.print("\nEnter the no.of columns of second  matrix : \t");
+                c2=sc.nextInt();
+                if(r1==r2&&c1==c2)
+                {
+                        int mat1[][]=new int[r1][c1];
+                        int mat2[][]=new int[r2][c2];
+                        addition ob=new addition();
+                        System.out.println("enter the elements of first matrix");
+                        ob.getdata(mat1,r1,c1);
+                        System.out.print("\nEntered matrix is :\n");
+                        ob.display(mat1,r1,c1);
+                        System.out.println("enter the elements of Second matrix");
+                        ob.getdata(mat2,r2,c2);
+                        System.out.print("\nEntered matrix is :\n");
+                        ob.display(mat2,r2,c2);
+                        System.out.println("The result is :\n");
+                        ob.add(mat1,r1,c1,mat2,r2,c2);
+                }
+                else
+                        System.out.println("Addition is not possible\n");
+        }
+}
+
