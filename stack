@@ -1,0 +1,54 @@
+ackage stackloader;
+//import java.util.*;
+
+public class getstack{
+
+//      Scanner sr = new Scanner(System.in);
+        int size,top = -1,choice;
+        int A[] = new int[100];
+
+        public void printme(){
+                System.out.println("hello......!");
+        }
+        public void getsize(int s){
+                size = s;
+        }
+
+        public void push(int item){
+                if(top == (size-1)){
+                        System.out.println("STACK is FULL");
+                }
+                else{
+                        top++;
+                        A[top] = item;
+                }
+        }
+
+        public void pop(){
+                if(top == -1){
+                        System.out.println("STACK is EMPTY");
+                }
+                else{
+                        System.out.println("POPED ITEM is "+A[top]);
+                        top--;
+                }
+        }
+
+        public void displaystack(){
+
+                int i;
+                if(top == -1){
+                        System.out.println("STACK is EMPTY");
+                }
+                else{
+                        for(i=0;i<=top;i++){
+                                System.out.println(A[i]+"\t");
+                        }
+                }
+        }
+
+
+        public static void main(String args[]){
+                getstack s1 = new getstack();
+        }
+}
