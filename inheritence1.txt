@@ -1,0 +1,59 @@
+import java.util.*;
+class employee
+{
+    String name;
+    int age;
+    long phno;
+    String ad;
+    int salary;
+
+    void printsalary(){
+        System.out.println("Salary: "+salary);
+    }
+}
+
+class officer extends employee{
+    String specialisation;
+}
+
+class manager extends employee{
+    String department;
+}
+
+class emp{
+    public static void main(String args[])
+    {
+        officer of=new officer();
+        of.name= "Sabu";
+        of.age= 40;
+        of.phno= 952699130;
+        of.ad= "Al hussain building saudi arabia";
+        of.salary= 5000;
+        of.specialisation= "software developer";
+        System.out.println("Details of officer: ");
+        System.out.println("Name: "+of.name);
+        System.out.println("Age: "+of.age);
+        System.out.println("Phone no : "+of.phno);
+        System.out.println("Address : "+of.ad);
+        of.printsalary();
+        System.out.println("Specialisation: "+of.specialisation);
+
+
+        manager ma=new manager();
+        ma.name= "Muhammed Sabir";
+        ma.age= 20;
+        ma.phno= 884891435;
+        ma.ad= "Al hassan building saudi arabia";
+        ma.salary= 200000;
+        ma.department= "Program";
+        System.out.println("Details of officer: ");
+        System.out.println("Name: "+ma.name);
+        System.out.println("Age: "+ma.age);
+        System.out.println("Phone no : "+ma.phno);
+        System.out.println("Address : "+ma.ad);
+        ma.printsalary();
+        System.out.println("Department: "+ma.department);
+
+
+    }
+}

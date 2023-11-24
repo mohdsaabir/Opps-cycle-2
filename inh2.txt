@@ -1,0 +1,43 @@
+import java.util.*;
+
+class employe{
+    int basicpay;
+    int salary;
+    void display(){
+        System.out.println("Salary: "+salary);
+    }
+    void calcsalary(int basicpay){
+        this.basicpay=basicpay;
+        salary=basicpay*2;
+    }
+}
+
+class engineer extends employe{
+    void details(){
+        System.out.println("Name:Muhammed Sabir");
+    }
+
+}
+
+class inh2{
+    public static void main(String args[])
+    {
+        int basicpay;
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter basic pay");
+        basicpay=s.nextInt();
+        engineer e=new engineer();
+        e.details();
+        e.calcsalary(basicpay);
+        e.display();
+    }
+}
+
+
+
+Output:
+
+Enter basic pay
+1000
+Name:Muhammed Sabir
+Salary: 2000
