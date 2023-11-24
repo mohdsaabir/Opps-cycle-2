@@ -1,0 +1,31 @@
+mport stackloader.*;
+import java.util.*;
+
+class stacktrial{
+        public static void main(String args[]){
+                Scanner sr = new Scanner(System.in);
+                int choice,size,item;
+                System.out.println("Enter the size of QUEUE");
+                size = sr.nextInt();
+                getstack s1 = new getstack();
+                s1.getsize(size);
+                System.out.println("1-PUSH\n2-POP\n3-DISPLAY\n4-EXIT\n");
+                do{
+                        System.out.println("Enter your choice");
+                        choice = sr.nextInt();
+                        switch(choice){
+                                case 1 :System.out.println("Enter the item to be pushed");
+                                        item = sr.nextInt();
+                                        s1.push(item);
+                                        break;
+                                case 2 :s1.pop();
+                                        break;
+                                case 3 :s1.display();
+                                        break;
+                                case 4 :System.out.println("Program exited ...!");
+                                        break;
+                                default :System.out.println("Invalid choice");
+                        }
+                }while(choice!=4);
+        }
+}
